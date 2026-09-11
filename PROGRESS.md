@@ -11,7 +11,7 @@ Each team member should add a new entry whenever a task is completed or a signif
 | ------------------------------------------ | --------------- | ----------------- |
 | Dataset download + basic organization      | **Done**        | Member 1          |
 | Dataset loading + attack/normal separation | **Done**        | Member 1          |
-| Feature extraction pipeline                | **Not Started** | Member 1          |
+| Feature extraction pipeline                | **done**        | Member 1          |
 | Baseline model (Logistic Regression)       | Not Started     | Member 3          |
 | LSTM world model                           | Not Started     | Member 2          |
 | Forecasting engine (K-step)                | Not Started     | Member 4          |
@@ -42,10 +42,14 @@ Each team member should add a new entry whenever a task is completed or a signif
   * Large dataset ko GitHub repository mein directly upload karne ke issue ko identify kiya. Dataset ko repository code se separate rakhna better approach hai.
 
 * **Agla kaam kya hai:**
-
-  * Feature extraction aur preprocessing pipeline develop karna.
-  * Dataset features ko ML model ke liye prepare karna.
-
+  * Feature extraction aur preprocessing pipeline complete karna.
+  * Large dataset ko memory-efficient chunk processing ke through process kiya.
+  * Missing values, infinite values aur duplicate rows handle kiye.
+  * Unnecessary columns remove kiye aur numeric ML features prepare kiye.
+  * `Target` column create kiya: Benign = 0 aur Attack = 1.
+  * Small representative sample dataset create kiya jo actual attack labels preserve karta hai.
+  * Full dataset aur processed dataset ko `.gitignore` mein exclude kiya, taaki large files GitHub par upload na hon.
+  * Required data-processing files aur sample dataset GitHub par push kiye.
 ---
 
 ## Completed Work
