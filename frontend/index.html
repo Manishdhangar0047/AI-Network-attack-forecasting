@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SIH26153 - Network Attack Forecasting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>AI Network Attack Forecasting</h1>
+  <p>Traffic file (CSV/PCAP) upload karo, system predict karega attack hoga ya nahi.</p>
+
+  <input type="file" id="fileInput">
+  <button onclick="uploadFile()">Predict</button>
+
+  <div id="result" style="display:none;">
+    <h2>Result</h2>
+    <p><strong>File:</strong> <span id="filename"></span></p>
+    <p><strong>Predicted Attack Stage:</strong> <span id="stage"></span></p>
+    <p><strong>Top Contributing Features:</strong> <span id="features"></span></p>
+
+    <h3>Infiltration Probability Over Time</h3>
+    <canvas id="probChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
