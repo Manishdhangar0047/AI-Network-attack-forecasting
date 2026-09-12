@@ -1,4 +1,4 @@
-# Project Progress Tracker — SIH26153
+﻿# Project Progress Tracker â€” SIH26153
 
 This file tracks the development progress of the AI-Based Network Attack Forecasting project.
 Each team member should add a new entry whenever a task is completed or a significant update is made.
@@ -26,7 +26,7 @@ Each team member should add a new entry whenever a task is completed or a signif
 
 ## Progress Log
 
-### 11 September 2026 — Member 1
+### 11 September 2026 â€” Member 1
 
 * **Kya kiya:**
 
@@ -54,7 +54,7 @@ Each team member should add a new entry whenever a task is completed or a signif
 
 ## Completed Work
 
-### Member 1 — Dataset & Data Loading
+### Member 1 â€” Dataset & Data Loading
 
 * Dataset collected and organized.
 * Multiple CSV files identified.
@@ -76,3 +76,4 @@ Each team member should add a new entry whenever a task is completed or a signif
 7. Streamlit dashboard/demo
 8. Final README and project documentation
 9. Testing and final integration
+
