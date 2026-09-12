@@ -35,3 +35,15 @@ importance = pd.DataFrame({
 }).sort_values("importance", ascending=False)
 print("Top 5 important features:")
 print(importance.head())
+import matplotlib.pyplot as plt
+
+top_features = importance.head(10)
+
+plt.figure(figsize=(10, 6))
+plt.barh(top_features["feature"], top_features["importance"], color="#d85a30")
+plt.xlabel("SHAP Importance (average impact)")
+plt.title("Top 10 Features - Attack Detection")
+plt.gca().invert_yaxis()
+plt.tight_layout()
+plt.savefig("shap_importance_chart.png", dpi=150)
+print("Chart saved as shap_importance_chart.png")

@@ -12,11 +12,11 @@ Each team member should add a new entry whenever a task is completed or a signif
 | Dataset download + basic organization      | **Done**        | Member 1          |
 | Dataset loading + attack/normal separation | **Done**        | Member 1          |
 | Feature extraction pipeline                | **done**        | Member 1          |
-| Baseline model (Logistic Regression)       | Not Started     | Member 3          |
+| Baseline model (Logistic Regression)       | **Done**        | Member 3          |
 | LSTM world model                           | Not Started     | Member 2          |
 | Forecasting engine (K-step)                | Not Started     | Member 4          |
 | MITRE ATT&CK stage mapping                 | Not Started     | Member 4          |
-| SHAP explainability                        | Not Started     | Member 3          |
+| SHAP explainability                        | **Done**        | Member 3          |
 | Streamlit demo                             | Not Started     | Member 5          |
 | README + docs                              | Not Started     | Member 5          |
 
@@ -25,6 +25,21 @@ Each team member should add a new entry whenever a task is completed or a signif
 ---
 
 ## Progress Log
+
+### 12 September 2026 - Member 3
+
+* **Kya kiya:**
+  * Baseline model (Logistic Regression) banaya real sample dataset pe - 94% accuracy.
+  * SHAP explainability laga ke top important features identify kiye (Idle Mean, Flow IAT Std, etc.).
+  * Baseline model vs LSTM World Model ka comparison kiya (baseline 94% accuracy, world model 28% - zyada training chahiye).
+  * SHAP importance ka visual bar chart banaya (shap_importance_chart.png) demo/PPT ke liye.
+
+* **Kya problem aayi:**
+  * Shuru mein dataset path aur missing values ki wajah se error aaye the, sab fix ho gaye.
+
+* **Agla kaam kya hai:**
+  * Full dataset aane pe model dobara train karna.
+
 
 ### 11 September 2026 â€” Member 1
 
@@ -76,4 +91,7 @@ Each team member should add a new entry whenever a task is completed or a signif
 7. Streamlit dashboard/demo
 8. Final README and project documentation
 9. Testing and final integration
+
+
+
 
