@@ -354,19 +354,41 @@ document.getElementById('exportBtn').addEventListener('click', () => {
 // ---------- Main: fetch prediction and render everything ----------
 // Abhi mock data use ho raha hai. Jab backend ka /predict endpoint ready ho jaye,
 // applyRange() ke andar fetch('http://localhost:5000/predict') se real data laga dena.
+async function applyRealData(data) {
+  renderStages(data.stage_probabilities, data.predicted_stage);
+  renderRisk(data.risk_score, data.predicted_stage);
+  renderThreatBadge(data.risk_score);
+  renderFeatures(data.top_features);
+  renderChart(data.forecast_series, data.risk_score);
+  renderKpis(data.kpis);
+}
+
 async function fetchForecast() {
-  // Example of real integration (Member 4 ke backend ke saath):
-  //
-  // const res = await fetch('http://localhost:5000/predict');
-  // const data = await res.json();
+  try {
+    const res = await fetch('http://localhost:5000/predict', { method: 'POST' });
+    const data = await res.json();
+    applyRealData(data);
+  } catch (err) {
+    console.error('Backend se connect nahi ho paaya, mock data dikha rahe hain:', err);
+    applyRange(currentRange);
+  }
 
-  applyRange(currentRange);
-
-  // Seed the feed with a couple of starting events, then simulate live updates
+  // Seed the feed with a couple of starting events
   pushLiveEvent();
   pushLiveEvent();
   pushLiveEvent();
   setInterval(pushLiveEvent, 6000);
+
+  // Har 5 second mein naya real prediction fetch karo (live feel ke liye)
+  setInterval(async () => {
+    try {
+      const res = await fetch('http://localhost:5000/predict', { method: 'POST' });
+      const data = await res.json();
+      applyRealData(data);
+    } catch (err) {
+      console.error('Live update fetch failed:', err);
+    }
+  }, 5000);
 }
 
 fetchForecast();
