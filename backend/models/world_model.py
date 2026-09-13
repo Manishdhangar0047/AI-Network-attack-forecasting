@@ -224,6 +224,18 @@ def forecast(model, recent_sequence: np.ndarray, config: Config = Config()):
         pred = model(x)
     return pred.squeeze(0).cpu().numpy()
 
+# -----------------------------
+# 6b. Anomaly score (Member 4 ke liye - risk_score ka secondary signal)
+# -----------------------------
+def compute_anomaly_score(model, recent_sequence: np.ndarray, actual_next: np.ndarray, config: Config = Config()):
+    """
+    ...
+    """
+    predicted = forecast(model, recent_sequence, config)
+    predicted_next = predicted[0]
+    error = np.mean((predicted_next - actual_next) ** 2)
+    return float(error)
+
 
 # -----------------------------
 # 7. Script entry point
